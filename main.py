@@ -40,12 +40,10 @@ class LostAndFoundSystem:
         else:
             self.items = []
 
-    # Save data to JSON file
     def save_data(self):
         with open(self.FILE_NAME, "w") as file:
             json.dump([item.to_dict() for item in self.items], file, indent=4)
 
-    # Add new item
     def add_item(self):
         item_id = input("Enter Item ID: ")
 
@@ -65,7 +63,6 @@ class LostAndFoundSystem:
 
         print("Item added successfully.")
 
-    # View all items
     def view_items(self):
         if not self.items:
             print("No items found.")
@@ -82,7 +79,6 @@ Status: {item.status}
 --------------------------
 """)
 
-    # Search item
     def search_item(self):
         keyword = input("Enter item name or category: ").lower()
 
