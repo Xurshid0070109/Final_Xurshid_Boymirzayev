@@ -27,7 +27,6 @@ class LostAndFoundSystem:
         self.items = []
         self.load_data()
 
-    # Load data from JSON file
     def load_data(self):
         if os.path.exists(self.FILE_NAME):
             try:
@@ -47,7 +46,6 @@ class LostAndFoundSystem:
     def add_item(self):
         item_id = input("Enter Item ID: ")
 
-        # Check unique ID
         for item in self.items:
             if item.item_id == item_id:
                 print("Item ID already exists.")
@@ -100,7 +98,6 @@ Status: {item.status}
         if not found:
             print("No matching items found.")
 
-    # Search by location (Bonus)
     def search_by_location(self):
         location = input("Enter location: ").lower()
 
@@ -121,7 +118,6 @@ Status: {item.status}
         if not found:
             print("No items found at this location.")
 
-    # Mark as claimed
     def mark_claimed(self):
         item_id = input("Enter Item ID to mark as claimed: ")
 
@@ -134,7 +130,6 @@ Status: {item.status}
 
         print("Item not found.")
 
-    # Delete item
     def delete_item(self):
         item_id = input("Enter Item ID to delete: ")
 
@@ -147,7 +142,6 @@ Status: {item.status}
 
         print("Item not found.")
 
-    # Sort items by category (Bonus)
     def sort_by_category(self):
         sorted_items = sorted(self.items, key=lambda x: x.category.lower())
 
@@ -155,7 +149,6 @@ Status: {item.status}
         for item in sorted_items:
             print(f"{item.category} - {item.item_name}")
 
-    # Count claimed/unclaimed items (Bonus)
     def count_items(self):
         claimed = 0
         unclaimed = 0
